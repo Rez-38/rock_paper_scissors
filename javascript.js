@@ -18,7 +18,7 @@ function getComputerChoice () {
 }
 
 function getHumanChoice () {
-    let tool = prompt("Choose your tool...", "rock, paper, scissors");
+    let tool = prompt("Choose your tool... Best of Five will win!", "rock, paper, scissors");
     
     if (!tool) {
         alert("You gotta choose something!");
