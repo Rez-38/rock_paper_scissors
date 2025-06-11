@@ -1,1 +1,2 @@
 # rock_paper_scissors
+This is a simple Rock, Paper, Scissors project that is meant to help familiarize myself with the declaration of functions as well as the use of conditional statements; plus some other aspects of JavaScript coding that were covered in the unit that this project belongs to (JavaScript Basics), like function scope, debugging, string methods,and overall JavaScript logic. Some extra bit of XP if you will.
