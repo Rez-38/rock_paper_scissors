@@ -59,41 +59,53 @@ function playGame () {
         //if (humanChoice === !null) {
             //    humanChoice = humanChoice.toLowerCase();
             //}
-        humanChoice = humanChoice.toLowerCase();
+            humanChoice = humanChoice.toLowerCase();
             
-        if (humanChoice === "rock" && computerChoice === "scissors") {
-            alert("You win this round! Rock beats Scissors!");
-            return ++humanScore;
-        } else if (humanChoice === "paper" && computerChoice === "rock") {
-            alert("You win this round! Paper beats Rock!");
-            return ++humanScore;
-        } else if (humanChoice === "scissors" && computerChoice === "paper") {
-            alert("You win this round! Scissors beat Paper!");
-            return ++humanScore;
-        } else if (humanChoice === computerChoice) {
-            alert("We have a draw! You both chose the same tool!");
-            return null;
-        } else {
-            alert("You lose...");
-            return ++computerScore;
-        }    
-    }
+            if (humanChoice === "rock" && computerChoice === "scissors") {
+                alert("You win this round! Rock beats Scissors!");
+                return ++humanScore;
+            } else if (humanChoice === "paper" && computerChoice === "rock") {
+                alert("You win this round! Paper beats Rock!");
+                return ++humanScore;
+            } else if (humanChoice === "scissors" && computerChoice === "paper") {
+                alert("You win this round! Scissors beat Paper!");
+                return ++humanScore;
+            } else if (humanChoice === computerChoice) {
+                alert("We have a draw! You both chose the same tool!");
+                return null;
+            } else {
+                alert("You lose...");
+                return ++computerScore;
+            }    
+            
+            
+            
+        }
+        
+    playRound(humanSelection, computerSelection);
+    console.log(computerScore);
+    console.log(humanScore);
+    alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
 
-        playRound(humanSelection, computerSelection);
+    playRound(getHumanChoice(), getComputerChoice());
         console.log(computerScore);
         console.log(humanScore);
+        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+
         playRound(getHumanChoice(), getComputerChoice());
         console.log(computerScore);
         console.log(humanScore);
+        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+
         playRound(getHumanChoice(), getComputerChoice());
         console.log(computerScore);
         console.log(humanScore);
+        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+
         playRound(getHumanChoice(), getComputerChoice());
         console.log(computerScore);
         console.log(humanScore);
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(computerScore);
-        console.log(humanScore);
+        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
 
         if (computerScore === humanScore) {
             alert("It's a DRAWWWW!!!!");
