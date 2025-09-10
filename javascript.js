@@ -5,116 +5,133 @@ const paper = "Paper";
 const scissors = "Scissors";
 
 function getComputerChoice () {
-    // return rock.toLowerCase(); useful during troubleshooting
+    //// return rock.toLowerCase(); useful during troubleshooting
     let choice = Math.floor(Math.random() * (3 - 1 + 1) + 1);
     
     if (choice === 1) {
+        console.log("Computer chose rock");
         return rock.toLowerCase();
     } else if (choice === 2) {
+        console.log("Computer chose paper");
         return paper.toLowerCase();
     } else if (choice === 3) {
+        console.log("Computer chose scissors");
         return scissors.toLowerCase();
     }
 }
 
-function getHumanChoice () {
-    let tool = prompt("Choose your tool... Best of Five will win!", "rock, paper, scissors");
+alert("Make your choice... Best of Five will win!");
+
+// function getHumanChoice () {
     
-    if (!tool) {
-        alert("You gotta choose something!");
-        return null;
-    }
-    
-    tool = tool.toLowerCase();
-    
-    if (tool === "rock") {
-        alert(`You chose ${rock}`);
-        return rock;
-    } else if (tool === "paper") {
-        alert(`You chose ${paper}`);
-        return paper;
-    } else if (tool === "scissors") {
-        alert(`You chose ${scissors}`);
-        return scissors;
-    } else {
-        alert("C'mon man, check your spelling... And don't type any nonsense!");
-        return null;
-    }
-}
+// }
 
 let computerScore = 0;
 let humanScore = 0;
 
 
-const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
-// console.log(computerSelection); useful during troubleshooting
-// console.log(humanSelection); useful during troubleshooting
+// const computerSelection = getComputerChoice();
+// const humanSelection = getHumanChoice();
+//// console.log(computerSelection); useful during troubleshooting
+//// console.log(humanSelection); useful during troubleshooting
 
-
-function playGame () {
-    
-    function playRound (humanChoice, computerChoice) {
+function playRound (humanChoice, computerChoice) {
         
-        //if (humanChoice === !null) {
-            //    humanChoice = humanChoice.toLowerCase();
-            //}
-            humanChoice = humanChoice.toLowerCase();
-            
-            if (humanChoice === "rock" && computerChoice === "scissors") {
-                alert("You win this round! Rock beats Scissors!");
-                return ++humanScore;
-            } else if (humanChoice === "paper" && computerChoice === "rock") {
-                alert("You win this round! Paper beats Rock!");
-                return ++humanScore;
-            } else if (humanChoice === "scissors" && computerChoice === "paper") {
-                alert("You win this round! Scissors beat Paper!");
-                return ++humanScore;
-            } else if (humanChoice === computerChoice) {
-                alert("We have a draw! You both chose the same tool!");
-                return null;
-            } else {
-                alert("You lose...");
-                return ++computerScore;
-            }    
-            
-            
-            
-        }
+    ////if (humanChoice === !null) {
+        ////    humanChoice = humanChoice.toLowerCase();
+        ////}
+        // humanChoice = humanChoice.toLowerCase();
         
-    playRound(humanSelection, computerSelection);
-    console.log(computerScore);
-    console.log(humanScore);
-    alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+        // if (humanChoice === "rock" && computerChoice === "scissors") {
+        //     alert("You win this round! Rock beats Scissors!");
+        //     return ++humanScore;
+        // } else if (humanChoice === "paper" && computerChoice === "rock") {
+        //     alert("You win this round! Paper beats Rock!");
+        //     return ++humanScore;
+        // } else if (humanChoice === "scissors" && computerChoice === "paper") {
+        //     alert("You win this round! Scissors beat Paper!");
+        //     return ++humanScore;
+        // } else if (humanChoice === computerChoice) {
+        //     alert("We have a draw! You both chose the same tool!");
+        //     return null;
+        // } else {
+        //     alert("You lose...");
+        //     return ++computerScore;
+        // }    
+        
+        
+        
+    }
 
-    playRound(getHumanChoice(), getComputerChoice());
-        console.log(computerScore);
-        console.log(humanScore);
-        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
 
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(computerScore);
-        console.log(humanScore);
-        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+const rockBtn = document.querySelector('#rockBtn');
+rockBtn.addEventListener('click', () => {
+    console.log("Rock was clicked");
+    let vsRock = getComputerChoice();
+    console.log(vsRock);
 
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(computerScore);
-        console.log(humanScore);
-        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+    // Handle each scenario (Rock, paper, or scissors?)
+    if (vsRock == "rock") {
+        alert("Draw");
+        null;
+    } else if (vsRock == "paper") {
+        alert("You lose");
+        ++computerScore;
+    } else if (vsRock == "scissors") {
+        alert("You win");
+        ++humanScore;
+    }
 
-        playRound(getHumanChoice(), getComputerChoice());
-        console.log(computerScore);
-        console.log(humanScore);
-        alert(`Computer Score: ${computerScore}, Your Score: ${humanScore}.`);
+    // Display Current Score
+    console.log("computer score: " + computerScore);
+    console.log("human score: " + humanScore);
+    return alert(`Computer Score: ${computerScore}. Your Score: ${humanScore}.`);
+});
 
-        if (computerScore === humanScore) {
-            alert("It's a DRAWWWW!!!!");
-        } else {
-            let winner = (computerScore < humanScore) ?
-                () => alert("Congratulations to the winner of this event!... Some random user!!!!!!!") :
-                () => alert("You have been defeated by the computer... The automatons have won! Skynet has crushed the human resistance!! Humanity could never regain control of Earth from the rogue AIs!!!!");
-            winner();
-        }
-}
+const paperBtn = document.querySelector('#paperBtn');
+paperBtn.addEventListener('click', () => {
+    console.log("Paper was clicked");
+    let vsPaper = getComputerChoice();
+    console.log(vsPaper);
 
-playGame();
+    // Handle each scenario
+    if (vsPaper == "rock") {
+        alert("You win");
+        ++humanScore;
+    } else if (vsPaper == "paper") {
+        alert("Draw");
+        null;
+    } else if (vsPaper == "scissors") {
+        alert("You lose");
+        ++computerScore;
+    }
+
+    // Display Current Score
+    console.log("computer score: " + computerScore);
+    console.log("human score: " + humanScore);
+    return alert(`Computer Score: ${computerScore}. Your Score: ${humanScore}.`);
+});
+
+const scissorsBtn = document.querySelector('#scissorsBtn');
+scissorsBtn.addEventListener('click', () => {
+    console.log("Scissors was clicked");
+    let vsScissors = getComputerChoice();
+    console.log(vsScissors);
+
+    // Handle each scenario
+    if (vsScissors == "rock") {
+        alert("You lose");
+        ++computerScore;
+    } else if (vsScissors == "paper") {
+        alert("You win");
+        ++humanScore;
+    } else if (vsScissors == "scissors") {
+        alert("Draw");
+        null;
+    }
+
+    // Display Current Score
+    console.log("computer score: " + computerScore);
+    console.log("human score: " + humanScore);
+    return alert(`Computer Score: ${computerScore}. Your Score: ${humanScore}.`);
+});
