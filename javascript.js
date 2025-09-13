@@ -62,8 +62,9 @@ function playRound (humanChoice, computerChoice) {
         
         
     }
-
-
+    
+    
+    const scoreVal = document.querySelector('#scoreVal');
 const rockBtn = document.querySelector('#rockBtn');
 rockBtn.addEventListener('click', () => {
     console.log("Rock was clicked");
@@ -85,6 +86,7 @@ rockBtn.addEventListener('click', () => {
     // Display Current Score
     console.log("computer score: " + computerScore);
     console.log("human score: " + humanScore);
+    scoreVal.textContent = `Computer Score: ${computerScore}. Your Score: ${humanScore}.`;
     return alert(`Computer Score: ${computerScore}. Your Score: ${humanScore}.`);
 });
 
@@ -109,6 +111,7 @@ paperBtn.addEventListener('click', () => {
     // Display Current Score
     console.log("computer score: " + computerScore);
     console.log("human score: " + humanScore);
+    scoreVal.textContent = `Computer Score: ${computerScore}. Your Score: ${humanScore}.`;
     return alert(`Computer Score: ${computerScore}. Your Score: ${humanScore}.`);
 });
 
@@ -133,5 +136,6 @@ scissorsBtn.addEventListener('click', () => {
     // Display Current Score
     console.log("computer score: " + computerScore);
     console.log("human score: " + humanScore);
+    scoreVal.textContent = `Computer Score: ${computerScore}. Your Score: ${humanScore}.`;
     return alert(`Computer Score: ${computerScore}. Your Score: ${humanScore}.`);
 });
