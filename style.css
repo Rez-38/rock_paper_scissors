@@ -1,0 +1,34 @@
+body {
+    background-color: darkgray;
+    margin: 0;
+}
+
+#buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    gap: 1%;
+}
+
+ #score,
+ #log {
+    background-color: whitesmoke;
+    text-align: center;
+    /* width: 15%; */
+    /* height: 25%; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* gap: 1%; */
+}
+/*
+#player,
+#computer {
+    background-color:rgb(17, 16, 16, .7);
+    color: whitesmoke;
+    width: 15%;
+} */
+
+#winnerDisplay {
+    text-align: right;
+}
