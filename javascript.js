@@ -66,10 +66,10 @@ paperBtn.addEventListener('click', () => {
     player.textContent = "Player chose paper.";
     
     // Computer Action...
-    playRound('paper', vsPaper);
-
-    // Handle each scenario
     let vsPaper = getComputerChoice();
+    
+    // Handle each scenario
+    playRound('paper', vsPaper);
     
     // Display Current Score
     scoreVal.textContent = `Computer Score: ${computerScore}. Your Score: ${humanScore}.`;
