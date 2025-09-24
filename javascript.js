@@ -171,3 +171,12 @@ function playRound(playerChoice, computerChoice) {
         ++computerScore;
     }
 };
+
+// ==========
+// Styles   =
+// ==========
+
+const buttons = document.querySelectorAll('#buttons button');
+buttons.forEach((btn) => {
+    btn.setAttribute("style", "padding: 1rem 2rem; font-size: 1.75rem;");
+});
